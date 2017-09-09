@@ -1,0 +1,4 @@
+ARCHIVE_TABLE = "archived_sessions"
+db_user="root"
+db_password="password"
+database=test

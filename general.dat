@@ -1,0 +1,6 @@
+db_login    =   "login" // sql login
+db_password =   "password" // sql password
+database = "database" // name of your database
+search_db = "Search" // name of search database
+disable_login= 0 // if set to 1, login will be disabled
+admin_email = "me@you.com" // administrator's email

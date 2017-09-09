@@ -1,0 +1,47 @@
+#ifndef HTML_HPP
+#define HTML_HPP
+// implement layers
+class html
+{
+public:
+	html();
+	~html(){}
+	int parsePage(const char *path);
+	int parsePage(const char *path,int destroy);
+	void resetUniversal();
+	void dump_core(const char *inData,int data_type);
+
+	void html_value(const char* aName, char* aValue ){ html_layer->add_value(aName,aValue); }
+	void html_value(const char* aName, const char* aValue ){ html_layer->add_value(aName,aValue); }
+	void html_value(const char* aName, string aValue ){ html_layer->add_value(aName,aValue); }
+	void html_value(const char* aName, int aValue ){html_layer->add_value(aName,aValue); }
+
+	void htmlerror(char *reportError, int errornum);
+
+	void create_layer(const char *inpath);
+
+	void layer_html_value(const char* aName, char* aValue){ layer.layer_array.add_value(aName,aValue); }
+
+	void finalize_layer(const char *inname);
+
+protected:
+	bool universal;
+	int destroy;
+	const char *htmlhead();
+
+	// parseSegment changed to parselayer
+
+	string parse_layer(const char *inpath);
+
+	private:
+	    vector_list *html_layer; 
+		struct lyr
+		{
+			const char *layer_path;
+			vector_list layer_array;
+			
+		} layer;
+
+};
+	#include "function_source/html/html.cpp"
+#endif

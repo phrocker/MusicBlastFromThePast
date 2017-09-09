@@ -1,0 +1,145 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
+#define USE_MYSQL 1
+#include "cgiparser.h"
+#include "cookies.h"
+#include "html.h"
+#include "loginmanage.h"
+#include "ip_restrict.h"
+using namespace std;
+
+#include "functions.h"
+	
+	
+cgiparser cgi_utilities;	
+    LoginManage login;
+    #include "mm.h"
+
+void searchmain()
+{
+	html html_controls;
+	html_controls.html_value("urlsess",cgi_utilities.cgivalue("SESSIONID"));
+	html_controls.parsePage("/home/phrocker/public_html/search.html");
+}
+
+int main()
+{
+ if (! check_ip() ) return 0;
+    //permissions permission("1");
+    
+   if (cgi_utilities.METHOD()==GET )
+    {
+		if (cgi_utilities.cgivalue("SESSIONID") == "")
+		{
+            		login.logout();
+			display_login("Please Log in");
+		}else
+		{
+           if (login.check_session(cgi_utilities.cgivalue("SESSIONID"))==VALID)
+            {
+			if (cgi_utilities.cgivalue("key")!="")
+			{
+				
+				Query query;
+				Result_Set results(query.str());
+				DB_Handler database;
+				database.create_connection("marc","password","test");
+				query << "select location,filename,filesize,artist,song from music where id='" << cgi_utilities.cgivalue("key") << "'";
+				if (database.execute_query(query,results))
+				{
+					if (cgi_utilities.cgivalue("DOWNLOAD")=="true")
+					{
+					char *buffer;
+					cout << "Content-type: audio/mpeg\n";
+					cout << "Content-Length: " << results[2] << "\n";
+					cout << "Content-Disposition: attachment ; filename= " << results[1] << "\n\n";
+//					cout << "Content-type: audio/mpeg\n\n";
+					ifstream charlie;
+					string ilename = results[0]+results[1];
+					charlie.open(ilename.c_str(), ios::in|ios::binary|ios::ate );
+					long size = charlie.tellg();
+					//while (charlie)
+					//	cout << charlie;
+					buffer= new char[size];
+					//char buffer[size];
+					charlie.seekg(0);
+					charlie.read(buffer,size);
+					
+					charlie.close();
+					//cout << buffer;
+					cout.write(buffer,size);
+//					delete [] buffer;
+					}
+					else
+					{
+						html html_controls;
+						html_controls.html_value("urlsess",cgi_utilities.cgivalue("SESSIONID"));
+						html_controls.html_value("filename",results[1]);
+						html_controls.html_value("artist",results[3]);
+						html_controls.html_value("song",results[4]);
+						html_controls.html_value("key",cgi_utilities.cgivalue("key"));
+						html_controls.html_value("filesize",results[2]);
+						html_controls.parsePage("/home/phrocker/public_html/foundmusic.html");
+					}
+				}
+				else searchmain();
+			}
+			else
+			searchmain();
+				
+            }
+           else
+            {
+                        login.logout();
+			display_login("You have been logged out");
+            }
+
+	  }
+	  
+    } 
+    else
+    {
+  		if (login.check_session(cgi_utilities.cgivalue("SESSIONID"))==VALID)
+            {
+			DB_Handler database;
+			database.create_connection("marc","password","test");
+			Query query;
+			Result_Set results(query.str());
+			query << "select song,artist,id from music where filename like '%" << 
+cgi_utilities.form_data("search") << "%' LIMIT 0,31";
+			string searchresults="";
+			if (database.execute_query(query,results))
+			{
+				if (results.number_rows() > 0)
+				{
+					int i=-1;
+					do
+					{
+						if (++i > 30) break;
+						searchresults += "<a href=\"http://phrocker.no-ip.info:8080/cgi-bin/search.cgi?SESSIONID=" + cgi_utilities.cgivalue("SESSIONID")+"&key="+results[2]+"\" target=\"_blank\">"+results[1] +"-- "+results[0] + "</a><br>";
+					} while (results++);
+					if (results.number_rows() > 30)
+					{
+					searchresults+="<br><center><a 
+href=\"http://phrocker.no-ip.info:8080/cgi-bin/search.cgi?SESSIONID="+cgi_utilities.cgivalue("SESSIONID")+"&begin=31\">Next 
+30</a></center>";
+					}
+				}else searchresults="No results found";
+			}else searchresults="No results found";
+			html html_controls;
+			html_controls.html_value("urlsess",cgi_utilities.cgivalue("SESSIONID"));
+			html_controls.html_value("search_results",searchresults);
+			html_controls.parsePage("/home/phrocker/public_html/search.html");
+		
+            }
+           else
+            {
+                        login.logout();
+			display_login("You have been logged out");
+            }
+}
+    //}
+    return 0;
+}

@@ -1,0 +1,3 @@
+pdog = 39
+P = 'POO\nP'
+P_cscal = "niagrafa\tls"

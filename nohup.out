@@ -1,0 +1,210 @@
+Preparing to insert into key database
+Finished adding 50,000 keys
+Preparing to insert into key database
+Preparing to insert into key database
+Error: Unknown column 'keyHas' in 'where clause'. Type: Query
+Error: Unknown column 'keyHas' in 'where clause'. Type: Query
+Error: Unknown column 'keyHas' in 'where clause'. Type: Query
+==28129== Memcheck, a memory error detector for x86-linux.
+==28129== Copyright (C) 2002-2004, and GNU GPL'd, by Julian Seward et al.
+==28129== Using valgrind-2.4.0, a program supervision framework for x86-linux.
+==28129== Copyright (C) 2000-2004, and GNU GPL'd, by Julian Seward et al.
+==28129== For more details, rerun with: -v
+==28129== 
+==28129== Conditional jump or move depends on uninitialised value(s)
+==28129==    at 0x8048F61: HashTable<int, int>::SearchKey(int, std::vector<VPOINTER<Hash<int, int> >, std::allocator<VPOINTER<Hash<int, int> > > >&) (in /home/phrocker/source_code/test)
+==28129==    by 0x8048C40: HashTable<int, int>::operator[](int) (in /home/phrocker/source_code/test)
+==28129==    by 0x80489DE: testhash() (in /home/phrocker/source_code/test)
+==28129==    by 0x8048A30: main (in /home/phrocker/source_code/test)
+==28129== 
+==28129== Invalid write of size 4
+==28129==    at 0x804A4AD: BSearchTreeNode<Hash<int, int> >::SetLeftChild(BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE3F: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804A4DF: BSearchTree<Hash<int, int> >::DestroyTree(BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804A492: BSearchTree<Hash<int, int> >::~BSearchTree() (in /home/phrocker/source_code/test)
+==28129==  Address 0x1BB2D7E8 is 24 bytes inside a block of size 32 free'd
+==28129==    at 0x1B904C49: operator delete(void*) (vg_replace_malloc.c:155)
+==28129==    by 0x804AD47: BSearchTree<Hash<int, int> >::DeleteNode(BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE3F: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804A4DF: BSearchTree<Hash<int, int> >::DestroyTree(BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129== 
+==28129== Invalid write of size 4
+==28129==    at 0x804A4BB: BSearchTreeNode<Hash<int, int> >::SetRightChild(BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE3F: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804A4DF: BSearchTree<Hash<int, int> >::DestroyTree(BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804A492: BSearchTree<Hash<int, int> >::~BSearchTree() (in /home/phrocker/source_code/test)
+==28129==  Address 0x1BB2D7EC is 28 bytes inside a block of size 32 free'd
+==28129==    at 0x1B904C49: operator delete(void*) (vg_replace_malloc.c:155)
+==28129==    by 0x804AD47: BSearchTree<Hash<int, int> >::DeleteNode(BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE3F: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804A4DF: BSearchTree<Hash<int, int> >::DestroyTree(BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129== 
+==28129== Invalid write of size 4
+==28129==    at 0x804A4AD: BSearchTreeNode<Hash<int, int> >::SetLeftChild(BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE3F: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804A4DF: BSearchTree<Hash<int, int> >::DestroyTree(BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804A492: BSearchTree<Hash<int, int> >::~BSearchTree() (in /home/phrocker/source_code/test)
+==28129==    by 0x804A3FA: AVLTree<Hash<int, int> >::~AVLTree() (in /home/phrocker/source_code/test)
+==28129==    by 0x8048E1E: VPOINTER<Hash<int, int> >::~VPOINTER() (in /home/phrocker/source_code/test)
+==28129==    by 0x80491BA: void std::_Destroy<VPOINTER<Hash<int, int> > >(VPOINTER<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804919D: void std::__destroy_aux<VPOINTER<Hash<int, int> >*>(VPOINTER<Hash<int, int> >*, VPOINTER<Hash<int, int> >*, __false_type) (in /home/phrocker/source_code/test)
+==28129==    by 0x8048E81: void std::_Destroy<VPOINTER<Hash<int, int> >*>(VPOINTER<Hash<int, int> >*, VPOINTER<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x8048D89: std::vector<VPOINTER<Hash<int, int> >, std::allocator<VPOINTER<Hash<int, int> > > >::~vector() (in /home/phrocker/source_code/test)
+==28129==    by 0x8048D6A: HashTable<int, int>::~HashTable() (in /home/phrocker/source_code/test)
+==28129==  Address 0x1BB2AA30 is 24 bytes inside a block of size 32 free'd
+==28129==    at 0x1B904C49: operator delete(void*) (vg_replace_malloc.c:155)
+==28129==    by 0x804AD47: BSearchTree<Hash<int, int> >::DeleteNode(BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE3F: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804A4DF: BSearchTree<Hash<int, int> >::DestroyTree(BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804A492: BSearchTree<Hash<int, int> >::~BSearchTree() (in /home/phrocker/source_code/test)
+==28129==    by 0x804A3FA: AVLTree<Hash<int, int> >::~AVLTree() (in /home/phrocker/source_code/test)
+==28129==    by 0x8048E1E: VPOINTER<Hash<int, int> >::~VPOINTER() (in /home/phrocker/source_code/test)
+==28129==    by 0x80491BA: void std::_Destroy<VPOINTER<Hash<int, int> > >(VPOINTER<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804919D: void std::__destroy_aux<VPOINTER<Hash<int, int> >*>(VPOINTER<Hash<int, int> >*, VPOINTER<Hash<int, int> >*, __false_type) (in /home/phrocker/source_code/test)
+==28129==    by 0x8048E81: void std::_Destroy<VPOINTER<Hash<int, int> >*>(VPOINTER<Hash<int, int> >*, VPOINTER<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x8048D89: std::vector<VPOINTER<Hash<int, int> >, std::allocator<VPOINTER<Hash<int, int> > > >::~vector() (in /home/phrocker/source_code/test)
+==28129== 
+==28129== Invalid write of size 4
+==28129==    at 0x804A4BB: BSearchTreeNode<Hash<int, int> >::SetRightChild(BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE3F: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804A4DF: BSearchTree<Hash<int, int> >::DestroyTree(BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804A492: BSearchTree<Hash<int, int> >::~BSearchTree() (in /home/phrocker/source_code/test)
+==28129==    by 0x804A3FA: AVLTree<Hash<int, int> >::~AVLTree() (in /home/phrocker/source_code/test)
+==28129==    by 0x8048E1E: VPOINTER<Hash<int, int> >::~VPOINTER() (in /home/phrocker/source_code/test)
+==28129==    by 0x80491BA: void std::_Destroy<VPOINTER<Hash<int, int> > >(VPOINTER<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804919D: void std::__destroy_aux<VPOINTER<Hash<int, int> >*>(VPOINTER<Hash<int, int> >*, VPOINTER<Hash<int, int> >*, __false_type) (in /home/phrocker/source_code/test)
+==28129==    by 0x8048E81: void std::_Destroy<VPOINTER<Hash<int, int> >*>(VPOINTER<Hash<int, int> >*, VPOINTER<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x8048D89: std::vector<VPOINTER<Hash<int, int> >, std::allocator<VPOINTER<Hash<int, int> > > >::~vector() (in /home/phrocker/source_code/test)
+==28129==    by 0x8048D6A: HashTable<int, int>::~HashTable() (in /home/phrocker/source_code/test)
+==28129==  Address 0x1BB2AA34 is 28 bytes inside a block of size 32 free'd
+==28129==    at 0x1B904C49: operator delete(void*) (vg_replace_malloc.c:155)
+==28129==    by 0x804AD47: BSearchTree<Hash<int, int> >::DeleteNode(BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE3F: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE04: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804A4DF: BSearchTree<Hash<int, int> >::DestroyTree(BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804A492: BSearchTree<Hash<int, int> >::~BSearchTree() (in /home/phrocker/source_code/test)
+==28129==    by 0x804A3FA: AVLTree<Hash<int, int> >::~AVLTree() (in /home/phrocker/source_code/test)
+==28129==    by 0x8048E1E: VPOINTER<Hash<int, int> >::~VPOINTER() (in /home/phrocker/source_code/test)
+==28129==    by 0x80491BA: void std::_Destroy<VPOINTER<Hash<int, int> > >(VPOINTER<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804919D: void std::__destroy_aux<VPOINTER<Hash<int, int> >*>(VPOINTER<Hash<int, int> >*, VPOINTER<Hash<int, int> >*, __false_type) (in /home/phrocker/source_code/test)
+==28129==    by 0x8048E81: void std::_Destroy<VPOINTER<Hash<int, int> >*>(VPOINTER<Hash<int, int> >*, VPOINTER<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x8048D89: std::vector<VPOINTER<Hash<int, int> >, std::allocator<VPOINTER<Hash<int, int> > > >::~vector() (in /home/phrocker/source_code/test)
+==28129== 
+==28129== Invalid write of size 4
+==28129==    at 0x804A4AD: BSearchTreeNode<Hash<int, int> >::SetLeftChild(BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE3F: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804A4DF: BSearchTree<Hash<int, int> >::DestroyTree(BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804A492: BSearchTree<Hash<int, int> >::~BSearchTree() (in /home/phrocker/source_code/test)
+==28129==    by 0x804A3FA: AVLTree<Hash<int, int> >::~AVLTree() (in /home/phrocker/source_code/test)
+==28129==    by 0x8048E1E: VPOINTER<Hash<int, int> >::~VPOINTER() (in /home/phrocker/source_code/test)
+==28129==    by 0x80491BA: void std::_Destroy<VPOINTER<Hash<int, int> > >(VPOINTER<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804919D: void std::__destroy_aux<VPOINTER<Hash<int, int> >*>(VPOINTER<Hash<int, int> >*, VPOINTER<Hash<int, int> >*, __false_type) (in /home/phrocker/source_code/test)
+==28129==    by 0x8048E81: void std::_Destroy<VPOINTER<Hash<int, int> >*>(VPOINTER<Hash<int, int> >*, VPOINTER<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x8048D89: std::vector<VPOINTER<Hash<int, int> >, std::allocator<VPOINTER<Hash<int, int> > > >::~vector() (in /home/phrocker/source_code/test)
+==28129==    by 0x8048D6A: HashTable<int, int>::~HashTable() (in /home/phrocker/source_code/test)
+==28129==    by 0x8048A08: testhash() (in /home/phrocker/source_code/test)
+==28129==  Address 0x1BB2A3A8 is 24 bytes inside a block of size 32 free'd
+==28129==    at 0x1B904C49: operator delete(void*) (vg_replace_malloc.c:155)
+==28129==    by 0x804AD1D: BSearchTree<Hash<int, int> >::DeleteNode(BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE3F: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804A4DF: BSearchTree<Hash<int, int> >::DestroyTree(BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804A492: BSearchTree<Hash<int, int> >::~BSearchTree() (in /home/phrocker/source_code/test)
+==28129==    by 0x804A3FA: AVLTree<Hash<int, int> >::~AVLTree() (in /home/phrocker/source_code/test)
+==28129==    by 0x8048E1E: VPOINTER<Hash<int, int> >::~VPOINTER() (in /home/phrocker/source_code/test)
+==28129==    by 0x80491BA: void std::_Destroy<VPOINTER<Hash<int, int> > >(VPOINTER<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804919D: void std::__destroy_aux<VPOINTER<Hash<int, int> >*>(VPOINTER<Hash<int, int> >*, VPOINTER<Hash<int, int> >*, __false_type) (in /home/phrocker/source_code/test)
+==28129==    by 0x8048E81: void std::_Destroy<VPOINTER<Hash<int, int> >*>(VPOINTER<Hash<int, int> >*, VPOINTER<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x8048D89: std::vector<VPOINTER<Hash<int, int> >, std::allocator<VPOINTER<Hash<int, int> > > >::~vector() (in /home/phrocker/source_code/test)
+==28129==    by 0x8048D6A: HashTable<int, int>::~HashTable() (in /home/phrocker/source_code/test)
+==28129== 
+==28129== Invalid write of size 4
+==28129==    at 0x804A4BB: BSearchTreeNode<Hash<int, int> >::SetRightChild(BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE3F: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804A4DF: BSearchTree<Hash<int, int> >::DestroyTree(BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804A492: BSearchTree<Hash<int, int> >::~BSearchTree() (in /home/phrocker/source_code/test)
+==28129==    by 0x804A3FA: AVLTree<Hash<int, int> >::~AVLTree() (in /home/phrocker/source_code/test)
+==28129==    by 0x8048E1E: VPOINTER<Hash<int, int> >::~VPOINTER() (in /home/phrocker/source_code/test)
+==28129==    by 0x80491BA: void std::_Destroy<VPOINTER<Hash<int, int> > >(VPOINTER<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804919D: void std::__destroy_aux<VPOINTER<Hash<int, int> >*>(VPOINTER<Hash<int, int> >*, VPOINTER<Hash<int, int> >*, __false_type) (in /home/phrocker/source_code/test)
+==28129==    by 0x8048E81: void std::_Destroy<VPOINTER<Hash<int, int> >*>(VPOINTER<Hash<int, int> >*, VPOINTER<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x8048D89: std::vector<VPOINTER<Hash<int, int> >, std::allocator<VPOINTER<Hash<int, int> > > >::~vector() (in /home/phrocker/source_code/test)
+==28129==    by 0x8048D6A: HashTable<int, int>::~HashTable() (in /home/phrocker/source_code/test)
+==28129==    by 0x8048A08: testhash() (in /home/phrocker/source_code/test)
+==28129==  Address 0x1BB2A3AC is 28 bytes inside a block of size 32 free'd
+==28129==    at 0x1B904C49: operator delete(void*) (vg_replace_malloc.c:155)
+==28129==    by 0x804AD1D: BSearchTree<Hash<int, int> >::DeleteNode(BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804AE3F: BSearchTree<Hash<int, int> >::PostOrder(void (BSearchTree<Hash<int, int> >::*)(BSearchTreeNode<Hash<int, int> >*), BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804A4DF: BSearchTree<Hash<int, int> >::DestroyTree(BSearchTreeNode<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804A492: BSearchTree<Hash<int, int> >::~BSearchTree() (in /home/phrocker/source_code/test)
+==28129==    by 0x804A3FA: AVLTree<Hash<int, int> >::~AVLTree() (in /home/phrocker/source_code/test)
+==28129==    by 0x8048E1E: VPOINTER<Hash<int, int> >::~VPOINTER() (in /home/phrocker/source_code/test)
+==28129==    by 0x80491BA: void std::_Destroy<VPOINTER<Hash<int, int> > >(VPOINTER<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x804919D: void std::__destroy_aux<VPOINTER<Hash<int, int> >*>(VPOINTER<Hash<int, int> >*, VPOINTER<Hash<int, int> >*, __false_type) (in /home/phrocker/source_code/test)
+==28129==    by 0x8048E81: void std::_Destroy<VPOINTER<Hash<int, int> >*>(VPOINTER<Hash<int, int> >*, VPOINTER<Hash<int, int> >*) (in /home/phrocker/source_code/test)
+==28129==    by 0x8048D89: std::vector<VPOINTER<Hash<int, int> >, std::allocator<VPOINTER<Hash<int, int> > > >::~vector() (in /home/phrocker/source_code/test)
+==28129==    by 0x8048D6A: HashTable<int, int>::~HashTable() (in /home/phrocker/source_code/test)
+==28129== 
+==28129== ERROR SUMMARY: 189 errors from 7 contexts (suppressed: 19 from 1)
+==28129== malloc/free: in use at exit: 2136 bytes in 89 blocks.
+==28129== malloc/free: 180 allocs, 91 frees, 5680 bytes allocated.
+==28129== For counts of detected errors, rerun with: -v
+==28129== searching for pointers to 89 not-freed blocks.
+==28129== checked 200704 bytes.
+==28129== 
+==28129== 
+==28129== 2136 bytes in 89 blocks are definitely lost in loss record 1 of 1
+==28129==    at 0x1B904718: operator new(unsigned) (vg_replace_malloc.c:132)
+==28129==    by 0x80490D3: HashTable<int, int>::SearchKey(int, std::vector<VPOINTER<Hash<int, int> >, std::allocator<VPOINTER<Hash<int, int> > > >&) (in /home/phrocker/source_code/test)
+==28129==    by 0x8048C40: HashTable<int, int>::operator[](int) (in /home/phrocker/source_code/test)
+==28129==    by 0x80489DE: testhash() (in /home/phrocker/source_code/test)
+==28129==    by 0x8048A30: main (in /home/phrocker/source_code/test)
+==28129== 
+==28129== LEAK SUMMARY:
+==28129==    definitely lost: 2136 bytes in 89 blocks.
+==28129==      possibly lost: 0 bytes in 0 blocks.
+==28129==    still reachable: 0 bytes in 0 blocks.
+==28129==         suppressed: 0 bytes in 0 blocks.
+Cache-Control: no-store
+Pragma: no-cache
+Content-type: text/html
+
+<html>
+<body>
+<center>Error Number: 2<br> Type: Query<br>You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'downloads=downloads+1' at line 1</center>
+</body>
+</html>

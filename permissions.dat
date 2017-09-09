@@ -1,0 +1,6 @@
+// admin_override -- if set to 1, allows admin ( those defined with admin privileges )
+// to override 
+db_user ="root"
+db_password="password"
+database="test"
+admin_override =0

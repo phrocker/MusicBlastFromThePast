@@ -1,0 +1,4 @@
+USE_TEMPLATE=0 // 0=no,1=yes
+HTML_DIRECTORY="/home/marc/code"
+CORE_HTML="universal.html"
+HTML_ERROR = "An HTML error has occurred. Please contact the system administrator!"
